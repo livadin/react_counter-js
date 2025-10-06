@@ -16,11 +16,7 @@ export const App = () => {
     setCount(currentCount => {
       const next = currentCount + 1;
 
-      if (next % 5 === 0) {
-        return next + 100;
-      }
-
-      return next;
+      return currentCount % 5 === 0 ? next + 100 : next;
     });
   };
 
