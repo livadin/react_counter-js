@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.scss';
 
 export const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(100);
 
   const addOne = () => {
     setCount(currentCount => currentCount + 1);
@@ -16,7 +16,11 @@ export const App = () => {
     setCount(currentCount => {
       const next = currentCount + 1;
 
-      return currentCount % 5 === 0 ? next + 100 : next;
+      if (next % 5 === 0) {
+        return next + 100;
+      }
+
+      return next;
     });
   };
 
